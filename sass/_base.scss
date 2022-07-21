@@ -1,0 +1,65 @@
+$color-primary: #4b2e0a;
+$color-primary-light: #884f09;
+$color-primary-dark: #32200aca;
+
+$color-grey-light-1: #f3f3f3;
+$color-grey-light-2: rgb(196, 185, 185);
+$color-secondary: rgb(233, 217, 217);
+$color-grey-dark-1: #575553;
+$color-grey-dark-2: #bcb8b5;
+
+$font-primary: 'nunito', sans-serif;
+$font-display: 'josefin sans', sans-serif;
+$color-black: #000;
+
+
+
+$bp-smallest: 15.6em; // 250px
+$bp-medium: 25.4em; // 407px
+$bp-large:46.8em; //750px
+$bp-largest: 53.12em; //850px
+$bp-exlargest: 67.8em; //1085px
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+box-sizing: border-box;
+font-size: 62.5%;
+
+    @media only screen and  (min-width: $bp-smallest) {
+        font-size: 25%;
+    }
+    @media only screen and  (min-width: $bp-medium) {
+        font-size: 35%;
+    }
+    @media only screen and  (min-width: $bp-large) {
+        font-size: 40%;
+    }
+    @media only screen and  (min-width: $bp-largest) {
+        font-size: 45%;
+    }
+
+    @media only screen and  (min-width: $bp-exlargest) {
+        font-size: 60%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container {
+    display: grid;
+
+    grid-template-rows: repeat(2, min-content) min-content 1fr repeat(3, min-content);
+
+    grid-template-columns: [header-start search-start] minmax(min-content, 17rem) [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-satrt] minmax(min-content, 1fr) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
